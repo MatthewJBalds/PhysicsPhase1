@@ -1,0 +1,8 @@
+﻿  glad.c
+  GDPHYSX-SampleProject.cpp
+C:\Users\Matthew Jayd\Physx-PC01\GDPHYSX-SampleProject\GDPHYSX-SampleProject.cpp(226,59): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  MyVector.cpp
+  P6Particle.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  GRAP1_Projects.vcxproj -> C:\Users\Matthew Jayd\Physx-PC01\GDPHYSX-SampleProject\x64\Debug\GDPHYSX-SampleProject.exe
