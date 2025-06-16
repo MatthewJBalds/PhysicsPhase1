@@ -55,12 +55,48 @@ int getMaxParticlesFromUser() {
     return maxParticles;
 }
 
+// Camera variables
+bool isPerspective = false;
+float cameraDistance = 80.0f;
+float cameraRotationX = 0.0f; // Rotation around Y-axis (left/right)
+float cameraRotationY = 0.0f; // Rotation around X-axis (up/down)
+
+// Key callback function
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (action == GLFW_PRESS || action == GLFW_REPEAT) {
+        const float rotationSpeed = 0.05f;
+
+        switch (key) {
+        case GLFW_KEY_1:
+            isPerspective = false; // Switch to orthographic
+            std::cout << "Switched to orthographic view" << std::endl;
+            break;
+        case GLFW_KEY_2:
+            isPerspective = true; // Switch to perspective
+            std::cout << "Switched to perspective view" << std::endl;
+            break;
+        case GLFW_KEY_W:
+            cameraRotationY += rotationSpeed; // Look up
+            break;
+        case GLFW_KEY_S:
+            cameraRotationY -= rotationSpeed; // Look down
+            break;
+        case GLFW_KEY_A:
+            cameraRotationX -= rotationSpeed; // Look left
+            break;
+        case GLFW_KEY_D:
+            cameraRotationX += rotationSpeed; // Look right
+            break;
+        }
+    }
+}
+
 int main() {
     // Initialize GLFW
     if (!glfwInit()) return -1;
 
     // Window setup
-    GLFWwindow* window = glfwCreateWindow(800, 800, "Volcano Eruption", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Group 5 - Engine Name", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
@@ -71,6 +107,10 @@ int main() {
         return -1;
     }
 
+
+    // Set key callback
+    glfwSetKeyCallback(window, key_callback);
+
     // Get user input
     const int maxParticles = getMaxParticlesFromUser();
 
@@ -78,6 +118,7 @@ int main() {
     Shader shader("Shaders/Sample.vert", "Shaders/Sample.frag");
     PhysicsWorld pWorld;
     std::vector<Particle> particles;
+	particles.reserve(maxParticles); // Reserve memory for particles to avoid reallocations
     MyVector spawnPoint(0, -50, 0);
 
     // Random number generators
@@ -89,12 +130,17 @@ int main() {
     std::uniform_real_distribution<float> forceDist(800.0f, 1200.0f);
     std::uniform_real_distribution<float> angleDist(0.0f, 2.0f * 3.14159265f);
     std::uniform_real_distribution<float> radiusDist(0.0f, 10.0f);
-
+    
     // Camera
     glm::mat4 projection = glm::ortho(-80.0f, 80.0f, -80.0f, 80.0f, -80.0f, 80.0f);
     glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    
+    glEnable(GL_DEPTH_TEST);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
+	//Drag force generator
+    DragForceGenerator dragForce(0.2f, 0.01f);
+    
     // Timing
     using clock = std::chrono::high_resolution_clock;
     auto prev_time = clock::now();
@@ -104,12 +150,37 @@ int main() {
 
     // Main loop
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Time calculation
         auto now = clock::now();
         float deltaTime = std::chrono::duration<float>(now - prev_time).count();
         prev_time = now;
+
+        // Update camera matrices
+        glm::mat4 projection;
+        if (isPerspective) {
+            // Perspective projection
+            projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 500.0f);
+        }
+        else {
+            // Orthographic projection
+            projection = glm::ortho(-80.0f, 80.0f, -80.0f, 80.0f, -80.0f, 500.0f);
+        }
+
+        // Calculate camera position based on rotation with height adjustment
+        float cosY = cos(cameraRotationY);
+        float camX = sin(cameraRotationX) * cosY * cameraDistance;
+        float camZ = cos(cameraRotationX) * cosY * cameraDistance;
+        float camY = sin(cameraRotationY) * cameraDistance;
+
+
+        // Update view matrix
+        glm::vec3 cameraPos = glm::vec3(camX, camY, camZ);
+        glm::vec3 target = glm::vec3(0.0f, 0.0f, 0.0f);
+        glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
+        glm::mat4 view = glm::lookAt(cameraPos, target, up);
+
 
         // Check if eruption is complete and particles are gone
         if (eruptionComplete && particles.empty()) {
