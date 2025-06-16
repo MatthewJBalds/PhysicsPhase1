@@ -1,14 +1,14 @@
 #include "ParticleSystem.h"
 
 namespace Physics {
-    ParticleSystem::ParticleSystem(Shader* shader, PhysicsWorld* world,
-        const MyVector& spawnPoint, int maxParticles)
-        : shader(shader), world(world), spawnPoint(spawnPoint),
-        maxParticles(maxParticles), gen(rd()),
+    ParticleSystem::ParticleSystem(Shader* shader, PhysicsWorld* world, const MyVector& spawnPoint)
+        : shader(shader), world(world), spawnPoint(spawnPoint), gen(rd()),
         colorDist(0.0f, 1.0f),
         sizeDist(2.0f, 10.0f),
-        lifeDist(1.0f, 2.0f),
-        forceDist(500.0f, 1500.0f) {}
+        lifeDist(1.0f, 10.0f),
+        forceDist(1.0f, 3000.0f),
+        angleDist(0.0f, 2.0f * 3.14159265f) {
+    }
 
     void ParticleSystem::Update(float deltaTime) {
         particles.erase(
@@ -19,9 +19,6 @@ namespace Physics {
                         world->RemoveParticle(&p.physics);
                         return true;
                     }
-                    // Fade out
-                    float alpha = p.lifetime / p.maxLifetime;
-                    p.visual.SetColor(glm::vec4(1, 1, 1, alpha));
                     return false;
                 }),
             particles.end()
@@ -36,33 +33,50 @@ namespace Physics {
     }
 
     void ParticleSystem::SpawnParticle() {
-        if (particles.size() >= maxParticles) return;
-
-        // Construct in-place
         particles.emplace_back("3D/sphere.obj", *shader);
-        Particle& newParticle = particles.back();
+        Particle& p = particles.back();
 
-        newParticle.physics.Position = spawnPoint;
-        newParticle.physics.mass = sizeDist(gen);
-        newParticle.physics.AddForce(GetRandomForce());
+        // Physics setup - all particles start at same point
+        p.physics.Position = MyVector(0, 0, 0);
+        p.physics.mass = 1.0f;
+        p.physics.Damping = 0.9f;
+        p.physics.Velocity = MyVector(0, 0, 0);
+        p.physics.ResetForce();
+
+        // Generate random spherical direction
+        float theta = angleDist(gen); // Horizontal angle
+        float phi = angleDist(gen) * 0.25f; // Vertical angle 
+        float forceMagnitude = forceDist(gen);
+
+        // Calculate force direction
+        float sinPhi = sin(phi);
+        float cosPhi = cos(phi);
+        MyVector forceDirection(
+            sinPhi * cos(theta) * 0.3f,  // Reduced horizontal
+            cosPhi * 1.5f,               // Boosted vertical
+            sinPhi * sin(theta) * 0.3f   // Reduced depth
+        );
+
+        // Apply force
+        p.physics.AddForce(forceDirection * forceMagnitude);
 
         // Visual properties
-        float size = newParticle.physics.mass;
-        newParticle.visual.SetScale(MyVector(size, size, size));
-        newParticle.visual.SetColor(glm::vec4(GetRandomColor(), 1.0f));
+        float size = sizeDist(gen);
+        p.visual.SetScale(MyVector(size, size, size));
+        p.visual.SetColor(glm::vec4(GetRandomColor(), 1.0f));
 
-        // Lifetime
-        newParticle.maxLifetime = lifeDist(gen);
-        newParticle.lifetime = newParticle.maxLifetime;
+        // Set lifetime
+        p.maxLifetime = lifeDist(gen);
+        p.lifetime = p.maxLifetime;
 
-        world->AddParticle(&newParticle.physics);
+        world->AddParticle(&p.physics);
     }
 
     MyVector ParticleSystem::GetRandomForce() {
         return MyVector(
-            forceDist(gen) * 0.2f - 100.0f,
-            forceDist(gen),
-            0
+            (colorDist(gen) - 0.5f) * 100.0f,  // Small horizontal variation
+            2500.0f,                           // Strong upward force
+            (colorDist(gen) - 0.5f) * 100.0f    // Small depth variation
         );
     }
 
