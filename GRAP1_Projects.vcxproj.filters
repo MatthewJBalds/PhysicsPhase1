@@ -51,6 +51,30 @@
     <ClCompile Include="p6\ParticleContact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="p6\ContactResolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\AnchoredSpring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\ParticleSpring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\ParticleLink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\Rod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\Assignment3\bungee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\Assignment3\chain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p6\Springs\Phase2\Cable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tiny_obj_loader.h">
@@ -87,6 +111,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="p6\ParticleContact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\ContactResolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\AnchoredSpring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\ParticleSpring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\ParticleLink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\Rod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\Assignment3\bungee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\Assignment3\chain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p6\Springs\Phase2\Cable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

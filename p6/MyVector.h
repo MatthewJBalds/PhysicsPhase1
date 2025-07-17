@@ -18,6 +18,7 @@ namespace Physics {
 
         // Vector properties
         float Magnitude() const;
+        float SqMagnitude() const;
         MyVector Direction() const;
         void Normalize();
 

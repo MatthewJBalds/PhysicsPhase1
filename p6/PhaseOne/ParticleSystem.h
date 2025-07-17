@@ -14,8 +14,7 @@ namespace Physics {
             float maxLifetime;
 
             Particle(const std::string& modelPath, Shader& shader)
-                : visual(modelPath, shader), lifetime(0), maxLifetime(0) {
-            }
+                : visual(modelPath, shader), lifetime(0), maxLifetime(0) {}
         };
 
         ParticleSystem(Shader* shader, PhysicsWorld* world, const MyVector& spawnPoint);
@@ -29,7 +28,7 @@ namespace Physics {
         MyVector spawnPoint;
         std::vector<Particle> particles;
 
-
+    
         std::random_device rd;
         std::mt19937 gen;
         std::uniform_real_distribution<float> colorDist;

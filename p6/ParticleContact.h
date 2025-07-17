@@ -14,9 +14,15 @@ namespace Physics {
 		//resolve ocntact
 		void Resolve(float time);
 
-	protected:
+		float Depth;
+
 		float GetSeparatingSpeed();
 
+
+	protected:
+		
 		void ResolveVelocity(float time);
+
+		void ResolveInterpenetration(float time);
 	};
 }

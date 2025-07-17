@@ -23,49 +23,6 @@ public:
     Physics::MyVector GetScale() const;
     void SetColor(const glm::vec3& newColor);
 
-
-    //pashe one
-    // Move constructor
-    GameObject(GameObject&& other) noexcept
-        : shader(other.shader),
-        position(std::move(other.position)),
-        scale(std::move(other.scale)),
-        color(std::move(other.color)),
-        VAO(other.VAO), VBO(other.VBO), EBO(other.EBO),
-        vertices(std::move(other.vertices)),
-        indices(std::move(other.indices)) {
-        other.VAO = other.VBO = other.EBO = 0;  // Invalidate source
-    }
-
-    // Move assignment operator
-    GameObject& operator=(GameObject&& other) noexcept {
-        if (this != &other) {
-            // Release current resources
-            glDeleteVertexArrays(1, &VAO);
-            glDeleteBuffers(1, &VBO);
-            glDeleteBuffers(1, &EBO);
-
-            // Transfer ownership
-            shader = other.shader;
-            position = std::move(other.position);
-            scale = std::move(other.scale);
-            color = std::move(other.color);
-            VAO = other.VAO;
-            VBO = other.VBO;
-            EBO = other.EBO;
-            vertices = std::move(other.vertices);
-            indices = std::move(other.indices);
-
-            // Invalidate source
-            other.VAO = other.VBO = other.EBO = 0;
-        }
-        return *this;
-    }
-
-    // Delete copy operations
-    GameObject(const GameObject&) = delete;
-    GameObject& operator=(const GameObject&) = delete;
-
 private:
     void LoadModel(const std::string& modelPath);
     void SetupBuffers();
