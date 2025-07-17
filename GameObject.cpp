@@ -106,3 +106,4 @@ GameObject::GameObject(const std::string& modelPath, Shader& shader, const glm::
 void GameObject::SetColor(const glm::vec3& newColor) {
     color = newColor;
 }
+

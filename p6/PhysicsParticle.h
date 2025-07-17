@@ -1,12 +1,32 @@
 #pragma once
 
 #include "MyVector.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 namespace Physics {
 
 	class PhysicsParticle
 	{
+
 	public:
+		MyVector AngularVelocity = MyVector(0, 0, 0);
+		float AngularDampening = 0.9f;
+		glm::mat4 Rotation = glm::mat4(1.0f);
+		void AddForceAtPoint(MyVector force, MyVector p);
+
+	protected:
+		MyVector accumulatedTorque = MyVector(0, 0, 0);
+		virtual float MomentOfInertia();
+
+	public:
+		//size of particle
+		float radius = 1.f;
+		//restitution of particle how bouncy 0-1
+		float restitution = 1.f;
 		// mass of particle
 		float mass = 0;
 		//current pos of particle
@@ -22,13 +42,9 @@ namespace Physics {
 
 		void ResetForce();
 
-		//makes it movable
-		PhysicsParticle(PhysicsParticle&& other) noexcept = default;
-		PhysicsParticle& operator=(PhysicsParticle&& other) noexcept = default;
+	/*public:
+		PhysicsParticle(const MyVector& position, float mass, float radius);*/
 
-		PhysicsParticle()
-			: Position(0, 0, 0), Velocity(0, 0, 0), Acceleration(0, 0, 0),
-			mass(1.0f), Damping(0.9f), isDestroyed(false) {}
 
 	protected:
 		//updates relative to time

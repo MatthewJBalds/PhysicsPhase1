@@ -5,6 +5,8 @@ namespace Physics {
 	void  ParticleContact::Resolve(float time) {
 		//call resolve velocity
 		ResolveVelocity(time);
+
+		ResolveInterpenetration(time);
 	}
 	float ParticleContact::GetSeparatingSpeed() {
 		MyVector velocity = particles[0]->Velocity;
@@ -37,5 +39,35 @@ namespace Physics {
 			MyVector v_B = Impulse * ((float)1 / particles[1]->mass);
 			particles[1]->Velocity = particles[1]->Velocity + v_B;
 		}
+	}
+
+	void ParticleContact::ResolveInterpenetration(float time) {
+		//if theyre not overlapping- skip
+		if (Depth <= 0) return;
+
+		//get tghe total mass of the collsion
+		float totalMass = (float)1 / particles[0]->mass;
+		if (particles[1]) totalMass += (float)1 / particles[1]->mass;
+
+		//invalid collison if total mass is 0 or less
+		if (totalMass <= 0) return;
+
+		float totalMoveByMass = Depth / totalMass;
+
+		MyVector moveByMass = contactNormal * totalMoveByMass;
+
+		//get the change in position for a
+
+		MyVector P_a = moveByMass * ((float)1 / particles[0]->mass);
+		//translate a
+		particles[0]->Position += P_a;
+
+		if (particles[1]) {
+			MyVector P_b = moveByMass * (-(float)1 / particles[1]->mass);
+
+			particles[1]->Position += P_b;
+		}
+		//after assume Depth = 0
+		Depth = 0;
 	}
 }

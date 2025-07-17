@@ -16,6 +16,9 @@ namespace Physics {
         return std::sqrt(x * x + y * y + z * z);
     }
 
+    float MyVector::SqMagnitude() const {
+		return x * x + y * y + z * z; 
+	}
     // Unit vector in same direction
     MyVector MyVector::Direction() const {
         float mag = Magnitude();

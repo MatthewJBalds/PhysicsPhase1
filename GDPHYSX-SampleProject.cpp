@@ -3,8 +3,12 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
-#include <random>
-#include <vector>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 //time
 #include <chrono>
@@ -24,245 +28,176 @@ constexpr std::chrono::nanoseconds timestep(16ms);
 #include "p6/ForceRegistry.h"
 #include "p6/GravityForceGenerator.h"
 #include "p6/DragForceGenerator.h"
-#include "p6/PhaseOne/ParticleSystem.h"
+#include "p6/ParticleContact.h"
+#include "p6/ContactResolver.h"
+#include "p6/Springs/AnchoredSpring.h"
+#include "p6/Springs/ParticleSpring.h"
+#include "p6/Springs/Rod.h"
+#include "p6/Springs/ParticleLink.h"
+#include "p6/Springs/Assignment3/bungee.h"
+#include "p6/Springs/Assignment3/chain.h"
+#include "p6/Springs/Phase2/Cable.h"
 
 using namespace Physics;
 
-struct Particle {
-    PhysicsParticle physics;
-    GameObject visual;
-    float lifetime;
-    float maxLifetime;
-    glm::vec3 color;
-
-    Particle(const std::string& modelPath, Shader& shader)
-        : physics(), visual(modelPath, shader), lifetime(0), maxLifetime(0), color(1.0f) {}
-
-    Particle(Particle&& other) noexcept = default;
-    Particle& operator=(Particle&& other) noexcept = default;
-    Particle(const Particle&) = delete;
-    Particle& operator=(const Particle&) = delete;
-};
-
-int getMaxParticlesFromUser() {
-    int maxParticles;
-    std::cout << "Enter maximum number of particles to spawn (100-5000): ";
-    while (!(std::cin >> maxParticles) || maxParticles < 100 || maxParticles > 5000) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid input. Please enter a number between 100 and 5000: ";
-    }
-    return maxParticles;
-}
-
-// Camera variables
-bool isPerspective = false;
-float cameraDistance = 80.0f;
-float cameraRotationX = 0.0f; // Rotation around Y-axis (left/right)
-float cameraRotationY = 0.0f; // Rotation around X-axis (up/down)
-
-// Key callback function
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-    if (action == GLFW_PRESS || action == GLFW_REPEAT) {
-        const float rotationSpeed = 0.05f;
-
-        switch (key) {
-        case GLFW_KEY_1:
-            isPerspective = false; // Switch to orthographic
-            std::cout << "Switched to orthographic view" << std::endl;
-            break;
-        case GLFW_KEY_2:
-            isPerspective = true; // Switch to perspective
-            std::cout << "Switched to perspective view" << std::endl;
-            break;
-        case GLFW_KEY_W:
-            cameraRotationY += rotationSpeed; // Look up
-            break;
-        case GLFW_KEY_S:
-            cameraRotationY -= rotationSpeed; // Look down
-            break;
-        case GLFW_KEY_A:
-            cameraRotationX -= rotationSpeed; // Look left
-            break;
-        case GLFW_KEY_D:
-            cameraRotationX += rotationSpeed; // Look right
-            break;
-        }
-    }
-}
-
 int main() {
     // Initialize GLFW
-    if (!glfwInit()) return -1;
+    if (!glfwInit()) {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
+        return -1;
+    }
 
-    // Window setup
-    GLFWwindow* window = glfwCreateWindow(800, 800, "Group 5 - Engine Name", NULL, NULL);
+    // Configure GLFW
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    // Create window
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Assignment03-MJ_Baldonado", NULL, NULL);
     if (!window) {
+        std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
     glfwMakeContextCurrent(window);
+
+    // Initialize GLAD
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cerr << "Failed to initialize GLAD" << std::endl;
         glfwTerminate();
         return -1;
     }
 
-
-    // Set key callback
-    glfwSetKeyCallback(window, key_callback);
-
-    // Get user input
-    const int maxParticles = getMaxParticlesFromUser();
-
-    // Setup
+    // Create shader
     Shader shader("Shaders/Sample.vert", "Shaders/Sample.frag");
-    PhysicsWorld pWorld;
-    std::vector<Particle> particles;
-	particles.reserve(maxParticles); // Reserve memory for particles to avoid reallocations
-    MyVector spawnPoint(0, -50, 0);
 
-    // Random number generators
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> hueDist(0.0f, 1.0f);  // For HSV color
-    std::uniform_real_distribution<float> sizeDist(1.0f, 5.0f);
-    std::uniform_real_distribution<float> lifeDist(2.0f, 4.0f);
-    std::uniform_real_distribution<float> forceDist(800.0f, 1200.0f);
-    std::uniform_real_distribution<float> angleDist(0.0f, 2.0f * 3.14159265f);
-    std::uniform_real_distribution<float> radiusDist(0.0f, 10.0f);
-    
-    // Camera
-    glm::mat4 projection = glm::ortho(-80.0f, 80.0f, -80.0f, 80.0f, -80.0f, 80.0f);
-    glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-    
-    glEnable(GL_DEPTH_TEST);
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    // Get simulation parameters from user
+    float cableLength, particleGap, particleRadius, gravityStrength;
+    MyVector applyForce;
 
-	//Drag force generator
-    DragForceGenerator dragForce(0.2f, 0.01f);
+    std::cout << "Enter simulation parameters:\n";
+    std::cout << "Cable Length: "; std::cin >> cableLength;
+    std::cout << "Particle Gap (horizontal spacing): "; std::cin >> particleGap;
+    std::cout << "Particle Radius: "; std::cin >> particleRadius;
+    std::cout << "Gravity Strength: "; std::cin >> gravityStrength;
+    std::cout << "Apply Force (x y z): ";
+    std::cin >> applyForce.x >> applyForce.y >> applyForce.z;
+
+    //Physics World
+    Physics::PhysicsWorld pWorld = Physics::PhysicsWorld();
+
+
+
+    const int PENDULUM_COUNT = 5;
+    std::vector<GameObject> spheres;
+    std::vector<Physics::PhysicsParticle*> particles;
+    std::vector<Physics::Cable*> cables;
+
+    // Calculate starting positions to center the 3rd pendulum
+    float totalWidth = (PENDULUM_COUNT - 1) * particleGap;
+    float startX = -totalWidth / 2.0f;  // Center the group
+    float anchorY = 20.0f;  // Common anchor height
+
+    // Create pendulum systems
+    for (int i = 0; i < PENDULUM_COUNT; i++) {
+        float anchorX = startX + i * particleGap;
+
+        // Create anchor point
+        MyVector anchor(anchorX, anchorY, 0);
+
+        // Create pendulum bob - positioned cableLength below anchor
+        Physics::PhysicsParticle* p = new Physics::PhysicsParticle();
+        p->Position = MyVector(anchorX, anchorY - cableLength, 0);
+        p->radius = particleRadius; // or p->Radius if that's the correct member
+        p->mass = 1.0f;
+        pWorld.AddParticle(p);
+        particles.push_back(p);
+
+        // Create render object
+        spheres.emplace_back("3D/sphere.obj", shader,
+            glm::vec3(0.5f, 0.8f, 1.0f));
+        spheres.back().SetScale(MyVector(particleRadius * 2.0f, particleRadius * 2.0f, particleRadius * 2.0f));
+
+
+        // Create cable from anchor to particle
+        cables.push_back(new Physics::Cable(p, anchor, cableLength));
+    }
+
+    // Add gravity
+    Physics::GravityForceGenerator gravity(MyVector(0, gravityStrength, 0));
+    for (auto p : particles) {
+        pWorld.forceRegistry.Add(p, &gravity);
+    }
     
-    // Timing
+
+    //initialize clock and variables
     using clock = std::chrono::high_resolution_clock;
-    auto prev_time = clock::now();
-    float spawnTimer = 0.0f;
-    const float spawnInterval = 0.02f;
-    bool eruptionComplete = false;
+    auto curr_time = clock::now();
+    auto prev_time = curr_time;
+    std::chrono::nanoseconds curr_ns(0);
 
+    // Camera setup
+    glm::mat4 projection = glm::ortho(-50.0f, 50.0f, -50.0f, 50.0f, -100.0f, 100.0f);
+    glm::mat4 view = glm::lookAt(
+        glm::vec3(0.0f, 0.0f, 10.0f),
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, 1.0f, 0.0f)
+    );
+
+    // Set window background
+    //glClearColor(0.0f, 0.3f, 0.3f, 1.0f);
+    bool forceApplied = false;
     // Main loop
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT);
 
-        // Time calculation
-        auto now = clock::now();
-        float deltaTime = std::chrono::duration<float>(now - prev_time).count();
-        prev_time = now;
+        // Time management
+        curr_time = clock::now();
+        auto dur = std::chrono::duration_cast<std::chrono::nanoseconds>(curr_time - prev_time);
+        prev_time = curr_time;
+        curr_ns += dur;
 
-        // Update camera matrices
-        glm::mat4 projection;
-        if (isPerspective) {
-            // Perspective projection
-            projection = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 500.0f);
-        }
-        else {
-            // Orthographic projection
-            projection = glm::ortho(-80.0f, 80.0f, -80.0f, 80.0f, -80.0f, 500.0f);
-        }
+        if (curr_ns >= timestep) {
+            auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(curr_ns);
 
-        // Calculate camera position based on rotation with height adjustment
-        float cosY = cos(cameraRotationY);
-        float camX = sin(cameraRotationX) * cosY * cameraDistance;
-        float camZ = cos(cameraRotationX) * cosY * cameraDistance;
-        float camY = sin(cameraRotationY) * cameraDistance;
-
-
-        // Update view matrix
-        glm::vec3 cameraPos = glm::vec3(camX, camY, camZ);
-        glm::vec3 target = glm::vec3(0.0f, 0.0f, 0.0f);
-        glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-        glm::mat4 view = glm::lookAt(cameraPos, target, up);
-
-
-        // Check if eruption is complete and particles are gone
-        if (eruptionComplete && particles.empty()) {
-            std::cout << "Eruption complete! Starting new eruption..." << std::endl;
-            eruptionComplete = false;
-        }
-
-        // Spawn new particles
-        if (!eruptionComplete) {
-            spawnTimer += deltaTime;
-            if (spawnTimer >= spawnInterval && particles.size() < maxParticles) {
-                spawnTimer = 0.0f;
-
-                particles.emplace_back("3D/sphere.obj", shader);
-                Particle& p = particles.back();
-
-                // Physics properties - volcano eruption pattern
-                float angle = angleDist(gen);
-                float radius = radiusDist(gen);
-                p.physics.Position = MyVector(spawnPoint.x + radius * cos(angle),
-                    spawnPoint.y,
-                    spawnPoint.z + radius * sin(angle));
-                p.physics.mass = sizeDist(gen);
-
-                // Strong upward force with slight variation
-                float forceVariation = forceDist(gen) * 0.1f;
-                p.physics.AddForce(MyVector(forceVariation - 50.0f,
-                    forceDist(gen) + 500.0f,
-                    forceVariation - 50.0f));
-
-                // Random vibrant color (HSV -> RGB)
-                float hue = hueDist(gen);
-                p.color = glm::vec3(
-                    hueDist(gen),  //R
-                    hueDist(gen),   //G
-                    hueDist(gen)      //B 
-                );
-                p.visual.SetColor(glm::vec4(p.color, 1.0f));
-
-                // Size and lifetime
-                float size = p.physics.mass;
-                p.visual.SetScale(MyVector(size, size, size));
-                p.maxLifetime = lifeDist(gen);
-                p.lifetime = p.maxLifetime;
-
-                pWorld.AddParticle(&p.physics);
+            // Generate and process cable constraints
+            for (auto& cable : cables) {
+                if (ParticleContact* contact = cable->GetContact()) {
+                    // Add contact using the correct method signature from your reference
+                    pWorld.AddContact(contact->particles[0],
+                        contact->particles[1],
+                        contact->restitution,
+                        contact->contactNormal,
+                        contact->Depth);
+                    delete contact; // Clean up the contact object
+                }
             }
-            else if (particles.size() >= maxParticles) {
-                eruptionComplete = true;
+
+            // Apply force when space is pressed
+            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !forceApplied) {
+                for (auto particle : particles) {
+                    particle->AddForce(applyForce);
+                }
+                forceApplied = true;
             }
+
+            pWorld.Update((float)ms.count() / 1000);
+            curr_ns -= curr_ns;
         }
 
-        // Update physics
-        pWorld.Update(deltaTime);
-
-        // Update particles
-        particles.erase(std::remove_if(particles.begin(), particles.end(),
-            [&](Particle& p) {
-                p.lifetime -= deltaTime;
-                if (p.lifetime <= 0) return true;
-
-                // Fade out and shrink
-                float lifeRatio = p.lifetime / p.maxLifetime;
-                p.visual.SetColor(glm::vec4(p.color, lifeRatio));
-                p.visual.SetScale(MyVector(
-                    p.physics.mass * lifeRatio,
-                    p.physics.mass * lifeRatio,
-                    p.physics.mass * lifeRatio
-                ));
-                return false;
-            }), particles.end());
-
-        // Render particles
-        for (auto& p : particles) {
-            p.visual.SetPosition(p.physics.Position);
-            p.visual.Render(view, projection);
+        // Rendering
+        for (size_t i = 0; i < particles.size(); i++) {
+            spheres[i].SetPosition(particles[i]->Position);
+            spheres[i].Render(view, projection);
         }
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
+    // Cleanup
+    for (auto p : particles) delete p;
+    for (auto c : cables) delete c;
     glfwTerminate();
     return 0;
 }
