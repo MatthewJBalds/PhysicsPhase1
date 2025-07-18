@@ -33,7 +33,7 @@ namespace Physics {
 		//vectorclass
 		std::vector<ParticleContact*> Contacts;
 		void AddContact ( PhysicsParticle* p1, PhysicsParticle* p2, float restitution, MyVector contactNormal, float Depth);
-
+		ContactResolver& GetContactResolver() { return contactResolver; }
 		//The list of all links
 		std::list<ParticleLink*> Links;
 
@@ -53,7 +53,6 @@ namespace Physics {
 		void UpdateParticleList();
 		                                                                //-9.8f for gravity
 		GravityForceGenerator Gravity = GravityForceGenerator(MyVector(0, -9.8f, 0));
-
 
 	};
 }

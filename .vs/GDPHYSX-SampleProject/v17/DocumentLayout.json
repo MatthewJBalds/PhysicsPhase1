@@ -11,20 +11,68 @@
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\Phase2\\Cable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ContactResolver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\Phase2\\Cable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ForceGenerator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ForceGenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleSpring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\RenderLine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\RenderLine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ParticleContact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\Assignment3\\chain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleSpring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\Assignment3\\chain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,16 +91,20 @@
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsParticle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhaseOne\\ParticleSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:p6\\PhaseOne\\ParticleSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhaseOne\\ParticleSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:p6\\PhaseOne\\ParticleSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,41 +122,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Cable.h",
-              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h",
-              "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.h",
-              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h",
-              "RelativeToolTip": "p6\\Springs\\Phase2\\Cable.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-17T10:07:36.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ParticleLink.h",
-              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h",
-              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.h",
-              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h",
-              "RelativeToolTip": "p6\\Springs\\ParticleLink.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "ContactResolver.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.h",
+              "RelativeDocumentMoniker": "p6\\ContactResolver.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.h",
+              "RelativeToolTip": "p6\\ContactResolver.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-17T10:04:07.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Cable.cpp",
-              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp",
-              "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.cpp",
-              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp",
-              "RelativeToolTip": "p6\\Springs\\Phase2\\Cable.cpp",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:00:49.807Z",
+              "WhenOpened": "2025-07-18T07:10:13.707Z",
               "EditorCaption": ""
             },
             {
@@ -115,27 +141,103 @@
               "RelativeDocumentMoniker": "GDPHYSX-SampleProject.cpp",
               "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\GDPHYSX-SampleProject.cpp",
               "RelativeToolTip": "GDPHYSX-SampleProject.cpp",
-              "ViewState": "AQIAAL0AAAAAAAAAAAAswLkAAAAJAAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAkwIEAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-16T11:10:15.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ParticleLink.cpp",
-              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
-              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.cpp",
-              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
-              "RelativeToolTip": "p6\\Springs\\ParticleLink.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "DocumentIndex": 2,
+              "Title": "PhysicsWorld.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.h",
+              "RelativeDocumentMoniker": "p6\\PhysicsWorld.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.h",
+              "RelativeToolTip": "p6\\PhysicsWorld.h",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-18T06:46:57.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cable.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp",
+              "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp",
+              "RelativeToolTip": "p6\\Springs\\Phase2\\Cable.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:04:06.489Z",
+              "WhenOpened": "2025-07-17T10:00:49.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PhysicsWorld.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
+              "RelativeDocumentMoniker": "p6\\PhysicsWorld.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
+              "RelativeToolTip": "p6\\PhysicsWorld.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-16T11:25:21.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ContactResolver.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.cpp",
+              "RelativeDocumentMoniker": "p6\\ContactResolver.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ContactResolver.cpp",
+              "RelativeToolTip": "p6\\ContactResolver.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-17T16:12:59.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cable.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h",
+              "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h",
+              "RelativeToolTip": "p6\\Springs\\Phase2\\Cable.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-17T10:07:36.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ForceGenerator.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.h",
+              "RelativeDocumentMoniker": "p6\\ForceGenerator.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.h",
+              "RelativeToolTip": "p6\\ForceGenerator.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-18T06:21:20.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ForceGenerator.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.cpp",
+              "RelativeDocumentMoniker": "p6\\ForceGenerator.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ForceGenerator.cpp",
+              "RelativeToolTip": "p6\\ForceGenerator.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-18T06:21:18.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ParticleSpring.cpp",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.cpp",
               "RelativeDocumentMoniker": "p6\\Springs\\ParticleSpring.cpp",
@@ -143,12 +245,131 @@
               "RelativeToolTip": "p6\\Springs\\ParticleSpring.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:05:06.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:05:06.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "RenderLine.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.h",
+              "RelativeDocumentMoniker": "p6\\Springs\\RenderLine.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.h",
+              "RelativeToolTip": "p6\\Springs\\RenderLine.h",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAuwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-18T05:29:04.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RenderLine.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.cpp",
+              "RelativeDocumentMoniker": "p6\\Springs\\RenderLine.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\RenderLine.cpp",
+              "RelativeToolTip": "p6\\Springs\\RenderLine.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-18T05:27:34.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ParticleContact.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.h",
+              "RelativeDocumentMoniker": "p6\\ParticleContact.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.h",
+              "RelativeToolTip": "p6\\ParticleContact.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-17T16:02:28.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ParticleContact.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.cpp",
+              "RelativeDocumentMoniker": "p6\\ParticleContact.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\ParticleContact.cpp",
+              "RelativeToolTip": "p6\\ParticleContact.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-17T16:02:25.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ParticleLink.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
+              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
+              "RelativeToolTip": "p6\\Springs\\ParticleLink.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-17T10:04:06.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "chain.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.h",
+              "RelativeDocumentMoniker": "p6\\Springs\\Assignment3\\chain.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.h",
+              "RelativeToolTip": "p6\\Springs\\Assignment3\\chain.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-17T15:42:57.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ParticleLink.h",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h",
+              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.h",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h",
+              "RelativeToolTip": "p6\\Springs\\ParticleLink.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-17T10:04:07.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "chain.cpp",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.cpp",
+              "RelativeDocumentMoniker": "p6\\Springs\\Assignment3\\chain.cpp",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.cpp",
+              "RelativeToolTip": "p6\\Springs\\Assignment3\\chain.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-17T15:42:58.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "sample.frag",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.frag",
+              "RelativeDocumentMoniker": "Shaders\\sample.frag",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.frag",
+              "RelativeToolTip": "Shaders\\sample.frag",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-17T15:34:31.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "sample.vert",
+              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.vert",
+              "RelativeDocumentMoniker": "Shaders\\sample.vert",
+              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\Shaders\\sample.vert",
+              "RelativeToolTip": "Shaders\\sample.vert",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-17T15:34:32.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "ParticleSpring.h",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.h",
               "RelativeDocumentMoniker": "p6\\Springs\\ParticleSpring.h",
@@ -156,12 +377,11 @@
               "RelativeToolTip": "p6\\Springs\\ParticleSpring.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-17T10:05:05.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:05:05.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 19,
               "Title": "GameObject.cpp",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\GameObject.cpp",
               "RelativeDocumentMoniker": "GameObject.cpp",
@@ -169,12 +389,11 @@
               "RelativeToolTip": "GameObject.cpp",
               "ViewState": "AQIAAFYAAAAAAAAAAAAQwG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:02:46.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:02:46.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 20,
               "Title": "AnchoredSpring.cpp",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\Springs\\AnchoredSpring.cpp",
               "RelativeDocumentMoniker": "p6\\Springs\\AnchoredSpring.cpp",
@@ -182,12 +401,11 @@
               "RelativeToolTip": "p6\\Springs\\AnchoredSpring.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:03:59.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-17T10:03:59.246Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "ParticleSystem.h",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhaseOne\\ParticleSystem.h",
               "RelativeDocumentMoniker": "p6\\PhaseOne\\ParticleSystem.h",
@@ -199,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "ParticleSystem.cpp",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhaseOne\\ParticleSystem.cpp",
               "RelativeDocumentMoniker": "p6\\PhaseOne\\ParticleSystem.cpp",
@@ -211,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 21,
               "Title": "PhysicsParticle.cpp",
               "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsParticle.cpp",
               "RelativeDocumentMoniker": "p6\\PhysicsParticle.cpp",
@@ -220,18 +438,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-16T11:25:07.436Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PhysicsWorld.cpp",
-              "DocumentMoniker": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
-              "RelativeDocumentMoniker": "p6\\PhysicsWorld.cpp",
-              "ToolTip": "C:\\Users\\Matthew Jayd\\Documents\\Physics\\Phase1\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
-              "RelativeToolTip": "p6\\PhysicsWorld.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-16T11:25:21.375Z"
             }
           ]
         }

@@ -158,6 +158,7 @@
     <ClCompile Include="p6\Springs\ParticleLink.cpp" />
     <ClCompile Include="p6\Springs\ParticleSpring.cpp" />
     <ClCompile Include="p6\Springs\Phase2\Cable.cpp" />
+    <ClCompile Include="p6\Springs\RenderLine.cpp" />
     <ClCompile Include="p6\Springs\Rod.cpp" />
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>
@@ -178,6 +179,7 @@
     <ClInclude Include="p6\Springs\ParticleLink.h" />
     <ClInclude Include="p6\Springs\ParticleSpring.h" />
     <ClInclude Include="p6\Springs\Phase2\Cable.h" />
+    <ClInclude Include="p6\Springs\RenderLine.h" />
     <ClInclude Include="p6\Springs\Rod.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
