@@ -37,11 +37,12 @@ constexpr std::chrono::nanoseconds timestep(16ms);
 
 using namespace Physics;
 
-// Window dimensions and screen bounds
-const int windowWidth = 800;
-const int windowHeight = 800;
 const float screenLeft = -400.0f;
 const float screenRight = 400.0f;
+
+// window dimensions
+int windowWidth = 800;
+int windowHeight = 800;
 
 int main() {
     // Get user input for params
@@ -80,7 +81,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Create window
-    GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "Particle Chain", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "GROUP 5 - YNGINE", NULL, NULL);
     if (!window) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -88,7 +89,7 @@ int main() {
     }
     glfwMakeContextCurrent(window);
 
-    // Initialize GLAD
+    // Initialization
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to initialize GLAD" << std::endl;
         glfwTerminate();
@@ -102,28 +103,25 @@ int main() {
     std::vector<std::unique_ptr<GameObject>> spheres;
     for (int i = 0; i < 5; i++) {
         spheres.push_back(std::make_unique<GameObject>("3D/sphere.obj", shader));
-        spheres[i]->SetColor(glm::vec3(1.f, 0.f, 0.f)); // Red spheres
+        spheres[i]->SetColor(glm::vec3(1.f, 0.f, 0.f));
     }
 
-    // Line renderer for cables
     Physics::RenderLine lineRenderer;
 
-    // Physics World
-    Physics::PhysicsWorld pWorld;
-    //pWorld.GetContactResolver().SetIterations(10);
+    //Physics World
+    Physics::PhysicsWorld pWorld = Physics::PhysicsWorld();
 
     // Create gravity force generator
     Physics::GravityForceGenerator* gravity = new Physics::GravityForceGenerator(MyVector(0, -gravityStrength, 0));
 
-    // Create 5 particles and cables
+    // Create 5 particles for Newton's cradle
     std::vector<Physics::PhysicsParticle> particles(5);
     std::vector<Physics::Cable*> cables(5);
 
-    // Calculate starting positions
-    float startX = -(particleGap * 2); // Center the chain
+    // Calculate starting positions - arrange in a line with specified gap
+    float startX = -(particleGap * 2); // Center the cradle
     float anchorY = 400.0f; // Height of anchor points
-    float startY = anchorY - cableLength; // Initial particle positions
-
+    float startY = anchorY - cableLength; // Particles hang down from anchors
 
     for (int i = 0; i < 5; i++) {
         // Set up particle
@@ -136,20 +134,22 @@ int main() {
         // Add particle to world
         pWorld.AddParticle(&particles[i]);
 
+        // Create cable constraint
         MyVector anchorPoint(startX + (i * particleGap), anchorY, 0);
-        cables[i] = new Physics::Cable(&particles[i], anchorPoint, cableLength);
-        // Add forces to registry
-        //pWorld.forceRegistry.Add(&particles[i], cables[i]);
+        cables[i] = new Physics::Cable(anchorPoint, cableLength, 5000.0f);
+
+        // Add cable and gravity to force registry
+        pWorld.forceRegistry.Add(&particles[i], cables[i]);
         pWorld.forceRegistry.Add(&particles[i], gravity);
 
-        // Set sphere scale
+        // Set sphere scale and initial position
         spheres[i]->SetScale(MyVector(particleRadius, particleRadius, particleRadius));
     }
 
     // Apply initial force to leftmost particle
-    particles[0].AddForce(MyVector(forceX, forceY, forceZ));
+    //particles[0].AddForce(MyVector(forceX, forceY, forceZ));
 
-    // Time tracking
+    //initialize clock and variables
     using clock = std::chrono::high_resolution_clock;
     auto curr_time = clock::now();
     auto prev_time = curr_time;
@@ -160,70 +160,47 @@ int main() {
     float viewHalfHeight = viewWidth / 2.0f;
     float viewCenterY = 225.0f;
 
-    glm::mat4 projection = glm::ortho(
-        screenLeft - 50.0f, screenRight + 50.0f,
-        viewCenterY - viewHalfHeight, viewCenterY + viewHalfHeight,
-        -500.0f, 100.0f
-    );
+    // Camera setup
+    glm::mat4 projection = glm::ortho(screenLeft - 50.0f, screenRight + 50.0f, viewCenterY - viewHalfHeight,  // bottom: -225
+        viewCenterY + viewHalfHeight, -500.0f, 100.0f);
     glm::mat4 view = glm::lookAt(
         glm::vec3(0.0f, 0.0f, 10.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f)
     );
-
-    // Enable depth testing
-    glEnable(GL_DEPTH_TEST);
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f); // Dark background
-
+    bool spacePressed = false;
+    bool forceApplied = false;
     // Main loop
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT);
 
-        // Time management
+        //Get current time
         curr_time = clock::now();
-        auto dur = std::chrono::duration_cast<std::chrono::nanoseconds>(curr_time - prev_time);
+        //checking of duration since last iteration
+        auto dur = std::chrono::duration_cast<std::chrono::nanoseconds> (curr_time - prev_time);
+        //set prev time with current for next iteration
         prev_time = curr_time;
+
+
+        //add the duration since last iteration to current time since last frame
         curr_ns += dur;
-
-        // Fixed timestep physics update
-        // In your main loop, modify the physics update section:
-        // In your physics update loop:
         while (curr_ns >= timestep) {
-            // Generate contacts from cables
-            std::vector<Physics::ParticleContact*> contacts;
-            for (auto cable : cables) {
-                if (Physics::ParticleContact* contact = cable->GenerateContact()) {
-                    contacts.push_back(contact);
+            //conver ns to ms
+            auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(timestep);
+            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !spacePressed) {
+                if (!forceApplied) {
+                    particles[0].AddForce(MyVector(forceX, forceY, forceZ));
+                    forceApplied = true;
                 }
+                spacePressed = true;
             }
-
-            // Add ground contact checks
-            for (auto& particle : particles) {
-                if (particle.Position.y < 0) {  // Assuming ground is at y=0
-                    Physics::ParticleContact* groundContact = new Physics::ParticleContact();
-                    groundContact->particles[0] = &particle;
-                    groundContact->contactNormal = MyVector(0, 1, 0); // Pushes upward
-                    groundContact->Depth = -particle.Position.y;
-                    groundContact->restitution = 0.7f; // Some bounce
-                    contacts.push_back(groundContact);
-                }
+            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
+                spacePressed = false;
             }
+            //call updates here:
+            pWorld.Update((float)ms.count() / 1000);
 
-            // Resolve all contacts
-            if (!contacts.empty()) {
-                pWorld.GetContactResolver().ResolveContacts(
-                    contacts,
-                    (float)std::chrono::duration_cast<std::chrono::milliseconds>(timestep).count() / 1000
-                );
-            }
-
-            // Clean up contacts
-            for (auto contact : contacts) {
-                delete contact;
-            }
-
-            // Regular physics update
-            pWorld.Update((float)std::chrono::duration_cast<std::chrono::milliseconds>(timestep).count() / 1000);
+            //reset time
             curr_ns -= timestep;
         }
 
@@ -236,7 +213,7 @@ int main() {
         // Draw cables
         shader.Use();
         shader.SetMat4("mvp", projection * view * glm::mat4(1.0f));
-        shader.SetVec3("objectColor", glm::vec3(0.3f, 0.3f, 0.3f)); // Dark gray cables
+        shader.SetVec3("objectColor", glm::vec3(0.3f, 0.3f, 0.3f)); // Dark gray for cables
 
         for (int i = 0; i < 5; i++) {
             glm::vec3 anchorPos(startX + (i * particleGap), anchorY, 0);
@@ -257,4 +234,3 @@ int main() {
     glfwTerminate();
     return 0;
 }
-
