@@ -1,29 +1,23 @@
+// Cable.h
 #pragma once
-#include "../ParticleLink.h"
+#include "../../ForceGenerator.h"
 #include "../../PhysicsParticle.h"
 #include "../../ParticleContact.h"
-#include "../../MyVector.h"
 
 namespace Physics {
-    class Cable : public ParticleLink {
+    class Cable : public ForceGenerator {
     public:
-        // Constructors
-        Cable(PhysicsParticle* particle1, PhysicsParticle* particle2,
-            float maxLen, float rest = 0.9f);
-        Cable(PhysicsParticle* particle, const MyVector& anchor,
-            float maxLen, float rest = 0.9f);
+        Cable(PhysicsParticle* particle, const MyVector& anchor, float maxLen);
 
-        // Getters
-        float GetMaxLength() const { return maxLength; }
-        float GetRestitution() const { return restitution; }
-        bool IsAnchored() const { return particles[1] == nullptr; }
+        // Force generator implementation
+        virtual void UpdateForce(PhysicsParticle* particle, float duration) override;
 
-    protected:
-        float CurrentLength();
+        // Contact generator implementation
+        ParticleContact* GenerateContact();
 
     private:
-        float maxLength;
-        float restitution;
+        PhysicsParticle* particle;  // Store reference to the particle
         MyVector anchorPoint;
+        float maxLength;
     };
 }

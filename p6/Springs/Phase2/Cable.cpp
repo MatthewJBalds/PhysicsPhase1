@@ -1,25 +1,30 @@
+// Cable.cpp
 #include "Cable.h"
 
 namespace Physics {
-    // Constructors
-    Cable::Cable(PhysicsParticle* p1, PhysicsParticle* p2, float maxLen, float rest)
-        : maxLength(maxLen), restitution(rest) {
-        particles[0] = p1;
-        particles[1] = p2;
+    Cable::Cable(PhysicsParticle* p, const MyVector& anchor, float maxLen)
+        : particle(p), anchorPoint(anchor), maxLength(maxLen) {}
+
+    void Cable::UpdateForce(PhysicsParticle* particle, float duration) {
+        // Empty - we'll handle constraints through contacts
     }
 
-    Cable::Cable(PhysicsParticle* p, const MyVector& anchor, float maxLen, float rest)
-        : maxLength(maxLen), restitution(rest), anchorPoint(anchor) {
-        particles[0] = p;
-        particles[1] = nullptr;
-    }
+    ParticleContact* Cable::GenerateContact() {
+        // Calculate current length
+        MyVector direction = particle->Position - anchorPoint;
+        float currentLength = direction.Magnitude();
 
-    float Cable::CurrentLength() {
-        if (IsAnchored()) {
-            return (anchorPoint - particles[0]->Position).Magnitude();
-        }
-        return (particles[1]->Position - particles[0]->Position).Magnitude();
-    }
+        // If within limits, no contact needed
+        if (currentLength <= maxLength) return nullptr;
 
+        // Create contact to enforce constraint
+        ParticleContact* contact = new ParticleContact();
+        contact->particles[0] = particle;
+        contact->contactNormal = direction.Direction();
+        contact->Depth = currentLength - maxLength;
+        contact->restitution = 0.0f; // Perfectly inelastic
+
+        return contact;
+    }
     
 }
