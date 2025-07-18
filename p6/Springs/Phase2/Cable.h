@@ -1,23 +1,19 @@
-// Cable.h
 #pragma once
 #include "../../ForceGenerator.h"
-#include "../../PhysicsParticle.h"
-#include "../../ParticleContact.h"
 
 namespace Physics {
-    class Cable : public ForceGenerator {
-    public:
-        Cable(PhysicsParticle* particle, const MyVector& anchor, float maxLen);
-
-        // Force generator implementation
-        virtual void UpdateForce(PhysicsParticle* particle, float duration) override;
-
-        // Contact generator implementation
-        ParticleContact* GenerateContact();
-
+    class Cable : public ForceGenerator
+    {
     private:
-        PhysicsParticle* particle;  // Store reference to the particle
         MyVector anchorPoint;
         float maxLength;
+        float springConstant; // For applying corrective force when at max length
+
+    public:
+        Cable(MyVector pos, float _maxLength, float _springConstant = 1000.0f)
+            : anchorPoint(pos), maxLength(_maxLength), springConstant(_springConstant) {}
+
+        void UpdateForce(PhysicsParticle* particle, float time) override;
     };
 }
+
