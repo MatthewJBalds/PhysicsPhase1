@@ -1,21 +1,31 @@
 #include "Cable.h"
 
-void Physics::Cable::UpdateForce(PhysicsParticle* particle, float time)
-{
-    MyVector pos = particle->Position;
-    MyVector direction = pos - anchorPoint;
-    float currentLength = direction.Magnitude();
+namespace Physics {
+    Cable::Cable(const MyVector& anchor, float maxLen)
+        : anchorPoint(anchor), maxLength(maxLen) {}
 
-    // Only apply force if the cable is at or beyond its maximum length
-    if (currentLength >= maxLength) {
-        // Calculate constraint force to keep particle at max length
-        direction = direction.Direction();
+    void Cable::UpdateForce(PhysicsParticle* particle, float duration) {
+        // Calculate current vector from anchor to particle
+        MyVector direction = particle->Position - anchorPoint;
+        float currentLength = direction.Magnitude();
 
-        // Apply a strong spring force to prevent exceeding max length
-        float extension = currentLength - maxLength;
-        float constraintForce = -springConstant * extension;
+        // If cable is stretched beyond max length
+        if (currentLength > maxLength) {
+            // Normalize direction vector
+            direction = direction * (1.0f / currentLength);
 
-        MyVector force = direction * constraintForce;
-        particle->AddForce(force);
+            // Calculate how much we're over-extended
+            float overExtension = currentLength - maxLength;
+
+            // Calculate position correction
+            MyVector correction = direction * (-overExtension);
+
+            // Immediately correct position (teleport to max length)
+            particle->Position = anchorPoint + direction * maxLength;
+
+            // Apply velocity correction (remove radial velocity component)
+            float radialVelocity = particle->Velocity.Dot(direction);
+            particle->Velocity = particle->Velocity - direction * radialVelocity;
+        }
     }
 }
