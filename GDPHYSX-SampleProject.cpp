@@ -23,7 +23,6 @@ constexpr std::chrono::nanoseconds timestep(16ms);
 #include "p6/ForceRegistry.h"
 #include "p6/GravityForceGenerator.h"
 #include "p6/DragForceGenerator.h"
-#include "p6/ForceGenerator.h"
 #include "p6/ParticleContact.h"
 #include "p6/ContactResolver.h"
 #include "p6/Springs/AnchoredSpring.h"
@@ -62,11 +61,11 @@ int main() {
     std::cin >> gravityStrength;
 
     std::cout << "Apply Force:\n";
-    std::cout << "x: ";
+    std::cout << "X: ";
     std::cin >> forceX;
-    std::cout << "y: ";
+    std::cout << "Y: ";
     std::cin >> forceY;
-    std::cout << "z: ";
+    std::cout << "Z: ";
     std::cin >> forceZ;
 
     // Initialize GLFW
@@ -136,18 +135,19 @@ int main() {
 
         // Create cable constraint
         MyVector anchorPoint(startX + (i * particleGap), anchorY, 0);
-        cables[i] = new Physics::Cable(anchorPoint, cableLength, 5000.0f);
+        cables[i] = new Physics::Cable(anchorPoint, cableLength, 0.0f);
+        cables[i]->particles[0] = &particles[i]; // Set the particle reference
+        cables[i]->particles[1] = nullptr;
 
-        // Add cable and gravity to force registry
-        pWorld.forceRegistry.Add(&particles[i], cables[i]);
+        // Add cable
+        pWorld.AddLink(cables[i]);
+        
+        // add grav
         pWorld.forceRegistry.Add(&particles[i], gravity);
 
         // Set sphere scale and initial position
         spheres[i]->SetScale(MyVector(particleRadius, particleRadius, particleRadius));
     }
-
-    // Apply initial force to leftmost particle
-    //particles[0].AddForce(MyVector(forceX, forceY, forceZ));
 
     //initialize clock and variables
     using clock = std::chrono::high_resolution_clock;
@@ -213,7 +213,7 @@ int main() {
         // Draw cables
         shader.Use();
         shader.SetMat4("mvp", projection * view * glm::mat4(1.0f));
-        shader.SetVec3("objectColor", glm::vec3(0.3f, 0.3f, 0.3f)); // Dark gray for cables
+        shader.SetVec3("objectColor", glm::vec3(1.0f, 1.0f, 1.0f));
 
         for (int i = 0; i < 5; i++) {
             glm::vec3 anchorPos(startX + (i * particleGap), anchorY, 0);
