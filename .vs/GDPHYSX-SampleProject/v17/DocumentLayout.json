@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsParticle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsParticle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsParticle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,16 +23,20 @@
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ParticleContact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ParticleContact.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\ContactResolver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\GDPHYSX-SampleProject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:GDPHYSX-SampleProject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\PhysicsWorld.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -99,10 +103,6 @@
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\Assignment3\\chain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2D01BB0B-55A2-4DD4-B60A-ABD8E2C319A0}|GRAP1_Projects.vcxproj|solutionrelative:p6\\Springs\\ParticleLink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -142,29 +142,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DragForceGenerator.cpp",
-              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\DragForceGenerator.cpp",
-              "RelativeDocumentMoniker": "p6\\DragForceGenerator.cpp",
-              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\DragForceGenerator.cpp",
-              "RelativeToolTip": "p6\\DragForceGenerator.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-19T02:47:30.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "ParticleContact.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ParticleContact.cpp",
               "RelativeDocumentMoniker": "p6\\ParticleContact.cpp",
               "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ParticleContact.cpp",
               "RelativeToolTip": "p6\\ParticleContact.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAvAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACUAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-17T16:02:25.603Z",
               "EditorCaption": ""
@@ -179,17 +167,18 @@
               "RelativeToolTip": "p6\\ParticleContact.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-17T16:02:28.224Z"
+              "WhenOpened": "2025-07-17T16:02:28.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PhysicsParticle.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsParticle.cpp",
               "RelativeDocumentMoniker": "p6\\PhysicsParticle.cpp",
               "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsParticle.cpp",
               "RelativeToolTip": "p6\\PhysicsParticle.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-16T11:25:07.436Z",
               "EditorCaption": ""
@@ -202,14 +191,14 @@
               "RelativeDocumentMoniker": "p6\\PhysicsParticle.h",
               "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsParticle.h",
               "RelativeToolTip": "p6\\PhysicsParticle.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-19T02:41:56.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Cable.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.cpp",
               "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.cpp",
@@ -221,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Cable.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\Phase2\\Cable.h",
               "RelativeDocumentMoniker": "p6\\Springs\\Phase2\\Cable.h",
@@ -233,19 +222,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "PhysicsWorld.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
               "RelativeDocumentMoniker": "p6\\PhysicsWorld.cpp",
               "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.cpp",
               "RelativeToolTip": "p6\\PhysicsWorld.cpp",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAmwBYAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-16T11:25:21.375Z"
+              "WhenOpened": "2025-06-16T11:25:21.375Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "PhysicsWorld.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\PhysicsWorld.h",
               "RelativeDocumentMoniker": "p6\\PhysicsWorld.h",
@@ -253,11 +243,12 @@
               "RelativeToolTip": "p6\\PhysicsWorld.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-18T06:46:57.135Z"
+              "WhenOpened": "2025-07-18T06:46:57.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "GDPHYSX-SampleProject.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\GDPHYSX-SampleProject.cpp",
               "RelativeDocumentMoniker": "GDPHYSX-SampleProject.cpp",
@@ -269,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "ContactResolver.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ContactResolver.cpp",
               "RelativeDocumentMoniker": "p6\\ContactResolver.cpp",
@@ -277,12 +268,36 @@
               "RelativeToolTip": "p6\\ContactResolver.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T16:12:59.164Z",
+              "WhenOpened": "2025-07-17T16:12:59.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ParticleLink.cpp",
+              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
+              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.cpp",
+              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
+              "RelativeToolTip": "p6\\Springs\\ParticleLink.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-17T10:04:06.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "DragForceGenerator.cpp",
+              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\DragForceGenerator.cpp",
+              "RelativeDocumentMoniker": "p6\\DragForceGenerator.cpp",
+              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\DragForceGenerator.cpp",
+              "RelativeToolTip": "p6\\DragForceGenerator.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-19T02:47:30.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "ForceRegistry.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ForceRegistry.cpp",
               "RelativeDocumentMoniker": "p6\\ForceRegistry.cpp",
@@ -294,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ForceGenerator.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ForceGenerator.h",
               "RelativeDocumentMoniker": "p6\\ForceGenerator.h",
@@ -306,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ForceGenerator.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ForceGenerator.cpp",
               "RelativeDocumentMoniker": "p6\\ForceGenerator.cpp",
@@ -318,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ContactResolver.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ContactResolver.h",
               "RelativeDocumentMoniker": "p6\\ContactResolver.h",
@@ -330,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ForceRegistry.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\ForceRegistry.h",
               "RelativeDocumentMoniker": "p6\\ForceRegistry.h",
@@ -342,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "DragForceGenerator.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\DragForceGenerator.h",
               "RelativeDocumentMoniker": "p6\\DragForceGenerator.h",
@@ -354,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "GravityForceGenerator.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\GravityForceGenerator.cpp",
               "RelativeDocumentMoniker": "p6\\GravityForceGenerator.cpp",
@@ -366,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "GravityForceGenerator.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\GravityForceGenerator.h",
               "RelativeDocumentMoniker": "p6\\GravityForceGenerator.h",
@@ -378,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ParticleSpring.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.cpp",
               "RelativeDocumentMoniker": "p6\\Springs\\ParticleSpring.cpp",
@@ -390,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "RenderLine.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\RenderLine.h",
               "RelativeDocumentMoniker": "p6\\Springs\\RenderLine.h",
@@ -402,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ParticleSpring.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleSpring.h",
               "RelativeDocumentMoniker": "p6\\Springs\\ParticleSpring.h",
@@ -414,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RenderLine.cpp",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\RenderLine.cpp",
               "RelativeDocumentMoniker": "p6\\Springs\\RenderLine.cpp",
@@ -427,18 +442,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "ParticleLink.cpp",
-              "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
-              "RelativeDocumentMoniker": "p6\\Springs\\ParticleLink.cpp",
-              "ToolTip": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\ParticleLink.cpp",
-              "RelativeToolTip": "p6\\Springs\\ParticleLink.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-17T10:04:06.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
               "Title": "chain.h",
               "DocumentMoniker": "C:\\Users\\matth\\Documents\\GitHub\\PhysicsPhase1\\p6\\Springs\\Assignment3\\chain.h",
               "RelativeDocumentMoniker": "p6\\Springs\\Assignment3\\chain.h",
