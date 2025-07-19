@@ -27,7 +27,7 @@ namespace Physics {
 			return (value < min) ? min : (value > max) ? max : value;
 		}
 
-		ParticleContact() : restitution(0.6f) {}
+		
 
 	protected:
 		

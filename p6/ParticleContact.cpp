@@ -11,9 +11,9 @@ namespace Physics {
 		if (particles[1]) relativeVel -= particles[1]->Velocity;
 
 		float sepVel = relativeVel.Dot(contactNormal);
-		if (sepVel > 0) return; // Moving apart
+		if (sepVel > 0) return; 
 
-		// 3. Apply impulse
+		//Apply impulse
 		float newSepVel = -sepVel * restitution;
 		float deltaVel = newSepVel - sepVel;
 
