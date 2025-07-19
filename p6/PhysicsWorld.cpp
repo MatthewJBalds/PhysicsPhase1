@@ -36,6 +36,9 @@ void PhysicsWorld::Update(float time)
 		contactResolver.ResolveContacts(Contacts, time);
 	}
 
+	//can remove
+	//for (auto p : Particles) p->Velocity *= 0.99f;
+
 }
 
 void PhysicsWorld::UpdateParticleList() {

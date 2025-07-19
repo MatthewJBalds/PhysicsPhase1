@@ -34,6 +34,7 @@ constexpr std::chrono::nanoseconds timestep(16ms);
 #include "p6/Springs/RenderLine.h"
 #include "p6/Springs/Phase2/Cable.h"
 
+
 using namespace Physics;
 
 const float screenLeft = -400.0f;
@@ -42,6 +43,12 @@ const float screenRight = 400.0f;
 // window dimensions
 int windowWidth = 800;
 int windowHeight = 800;
+
+bool isPerspective = false;
+float cameraDistance = 500.0f;
+float cameraRotationX = 0.0f;
+float cameraRotationY = 0.3f;
+const float MAX_VERTICAL_ANGLE = glm::pi<float>() * 0.49f;
 
 int main() {
     // Get user input for params
@@ -141,7 +148,7 @@ int main() {
 
         // Add cable
         pWorld.AddLink(cables[i]);
-        
+
         // add grav
         pWorld.forceRegistry.Add(&particles[i], gravity);
 
@@ -160,59 +167,106 @@ int main() {
     float viewHalfHeight = viewWidth / 2.0f;
     float viewCenterY = 225.0f;
 
-    // Camera setup
-    glm::mat4 projection = glm::ortho(screenLeft - 50.0f, screenRight + 50.0f, viewCenterY - viewHalfHeight,  // bottom: -225
-        viewCenterY + viewHalfHeight, -500.0f, 100.0f);
-    glm::mat4 view = glm::lookAt(
-        glm::vec3(0.0f, 0.0f, 10.0f),
-        glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.0f, 1.0f, 0.0f)
-    );
+    //// Camera setup
+    //glm::mat4 projection = glm::ortho(screenLeft - 50.0f, screenRight + 50.0f, viewCenterY - viewHalfHeight,  // bottom: -225
+    //    viewCenterY + viewHalfHeight, -500.0f, 100.0f);
+    //glm::mat4 view = glm::lookAt(
+    //    glm::vec3(0.0f, 0.0f, 10.0f),
+    //    glm::vec3(0.0f, 0.0f, 0.0f),
+    //    glm::vec3(0.0f, 1.0f, 0.0f)
+    //);
+
     bool spacePressed = false;
     bool forceApplied = false;
     // Main loop
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT);
+        // Clear both color and depth buffers
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //Get current time
-        curr_time = clock::now();
-        //checking of duration since last iteration
-        auto dur = std::chrono::duration_cast<std::chrono::nanoseconds> (curr_time - prev_time);
-        //set prev time with current for next iteration
-        prev_time = curr_time;
+        // Time calculation - FIXED
+        auto new_time = clock::now();
+        auto frame_time = new_time - curr_time;
+        curr_time = new_time;
+        curr_ns += std::chrono::duration_cast<std::chrono::nanoseconds>(frame_time);
 
+        // Calculate camera position - MOVED BEFORE PHYSICS UPDATE
+        float cosY = cos(cameraRotationY);
+        float camX = sin(cameraRotationX) * cosY * cameraDistance;
+        float camZ = cos(cameraRotationX) * cosY * cameraDistance;
+        float camY = sin(cameraRotationY) * cameraDistance + 100.0f;
 
-        //add the duration since last iteration to current time since last frame
-        curr_ns += dur;
+        // Set up view matrix
+        glm::vec3 cameraPos(camX, camY, camZ);
+        glm::mat4 view = glm::lookAt(cameraPos,
+            glm::vec3(0.0f, 100.0f, 0.0f),
+            glm::vec3(0.0f, 1.0f, 0.0f));
+
+        // Set up projection matrix based on view mode
+        glm::mat4 projection;
+        if (isPerspective) {
+            projection = glm::perspective(glm::radians(45.0f),
+                static_cast<float>(windowWidth) / windowHeight,
+                0.1f, 1000.0f);
+        }
+        else {
+            float orthoSize = 400.0f * 1.2f;
+            projection = glm::ortho(-orthoSize, orthoSize,
+                -orthoSize, orthoSize,
+                -1000.0f, 1000.0f);
+        }
+
+        // Handle input - MOVED OUTSIDE THE PHYSICS TIMESTEP LOOP
+        const float rotationSpeed = 0.05f;
+        if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+            isPerspective = false;
+        }
+        if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
+            isPerspective = true;
+        }
+        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+            if (cameraRotationY < MAX_VERTICAL_ANGLE) {
+                cameraRotationY += rotationSpeed;
+            }
+        }
+        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+            if (cameraRotationY > -MAX_VERTICAL_ANGLE) {
+                cameraRotationY -= rotationSpeed;
+            }
+        }
+        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+            cameraRotationX -= rotationSpeed;
+        }
+        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+            cameraRotationX += rotationSpeed;
+        }
+
+        // Space bar handling - MOVED OUTSIDE THE PHYSICS TIMESTEP LOOP
+        if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !spacePressed) {
+            if (!forceApplied) {
+                particles[0].AddForce(MyVector(forceX, forceY, forceZ));
+                forceApplied = true;
+            }
+            spacePressed = true;
+        }
+        if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
+            spacePressed = false;
+        }
+
+        // Physics update - FIXED timing
         while (curr_ns >= timestep) {
-            //conver ns to ms
-            auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(timestep);
-            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && !spacePressed) {
-                if (!forceApplied) {
-                    particles[0].AddForce(MyVector(forceX, forceY, forceZ));
-                    forceApplied = true;
-                }
-                spacePressed = true;
-            }
-            if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
-                spacePressed = false;
-            }
-            //call updates here:
-            pWorld.Update((float)ms.count() / 1000);
-
-            //reset time
+            pWorld.Update(static_cast<float>(timestep.count()) / 1000000000.0f);
             curr_ns -= timestep;
         }
 
-        // Render all spheres
+        // Render all spheres with new camera
         for (int i = 0; i < 5; i++) {
             spheres[i]->SetPosition(particles[i].Position);
             spheres[i]->Render(view, projection);
         }
 
-        // Draw cables
+        // Draw cables with new camera
         shader.Use();
-        shader.SetMat4("mvp", projection * view * glm::mat4(1.0f));
+        shader.SetMat4("mvp", projection * view);
         shader.SetVec3("objectColor", glm::vec3(1.0f, 1.0f, 1.0f));
 
         for (int i = 0; i < 5; i++) {

@@ -28,6 +28,26 @@ namespace Physics {
 
         return contact;
     }
+
+    void Cable::Update(float dt) {
+        // Calculate current vector from anchor to particle
+        MyVector toParticle = particle->Position - anchorPoint;
+        float currentLength = toParticle.Magnitude();
+
+        // Check if cable is over-extended
+        if (currentLength > maxLength) {
+            // Calculate correction vector
+            MyVector correction = toParticle.Direction() * (currentLength - maxLength);
+
+            // Apply position correction
+            particle->Position -= correction;
+
+            // Optional: Velocity damping to reduce oscillation
+            MyVector relativeVel = particle->Velocity;
+            float velAlongCable = relativeVel.Dot(toParticle.Direction());
+            particle->Velocity -= toParticle.Direction() * velAlongCable * 0.1f;
+        }
+    }
 }
 
     

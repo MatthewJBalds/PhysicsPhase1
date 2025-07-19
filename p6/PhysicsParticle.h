@@ -12,7 +12,7 @@ namespace Physics {
 	class PhysicsParticle
 	{
 
-	public:
+	/*public:
 		MyVector AngularVelocity = MyVector(0, 0, 0);
 		float AngularDampening = 0.9f;
 		glm::mat4 Rotation = glm::mat4(1.0f);
@@ -20,7 +20,7 @@ namespace Physics {
 
 	protected:
 		MyVector accumulatedTorque = MyVector(0, 0, 0);
-		virtual float MomentOfInertia();
+		virtual float MomentOfInertia();*/
 
 	public:
 		//size of particle
@@ -41,6 +41,10 @@ namespace Physics {
 		void AddForce(MyVector force);
 
 		void ResetForce();
+
+		float GetInverseMass() const {
+			return (mass <= 0.0f) ? 0.0f : 1.0f / mass;  // Handles infinite mass (mass <= 0)
+		}
 
 	/*public:
 		PhysicsParticle(const MyVector& position, float mass, float radius);*/

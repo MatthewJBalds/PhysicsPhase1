@@ -2,11 +2,31 @@
 
 namespace Physics {
 
-	void  ParticleContact::Resolve(float time) {
-		//call resolve velocity
-		ResolveVelocity(time);
+	void ParticleContact::Resolve(float dt) {
+		// Validate inputs
+		if (!particles[0] || restitution < 0.f || restitution > 1.f) return;
 
-		ResolveInterpenetration(time);
+		//Calculate separating velocity
+		MyVector relativeVel = particles[0]->Velocity;
+		if (particles[1]) relativeVel -= particles[1]->Velocity;
+
+		float sepVel = relativeVel.Dot(contactNormal);
+		if (sepVel > 0) return; // Moving apart
+
+		// 3. Apply impulse
+		float newSepVel = -sepVel * restitution;
+		float deltaVel = newSepVel - sepVel;
+
+		float totalInvMass = particles[0]->GetInverseMass();
+		if (particles[1]) totalInvMass += particles[1]->GetInverseMass();
+
+		if (totalInvMass <= 0) return;
+
+		float impulse = deltaVel / totalInvMass;
+		particles[0]->Velocity += contactNormal * (impulse * particles[0]->GetInverseMass());
+		if (particles[1]) {
+			particles[1]->Velocity -= contactNormal * (impulse * particles[1]->GetInverseMass());
+		}
 	}
 	float ParticleContact::GetSeparatingSpeed() {
 		MyVector velocity = particles[0]->Velocity;

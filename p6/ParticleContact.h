@@ -1,6 +1,11 @@
 #pragma once
 
 #include "PhysicsParticle.h"
+#include <algorithm>
+#include <iostream>
+#include <cstdint>
+#include <iomanip>
+
 
 namespace Physics {
 	class ParticleContact {
@@ -18,6 +23,11 @@ namespace Physics {
 
 		float GetSeparatingSpeed();
 
+		float clamp(float value, float min, float max) {
+			return (value < min) ? min : (value > max) ? max : value;
+		}
+
+		ParticleContact() : restitution(0.6f) {}
 
 	protected:
 		
