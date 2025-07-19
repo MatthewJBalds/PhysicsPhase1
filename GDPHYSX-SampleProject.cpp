@@ -167,14 +167,7 @@ int main() {
     float viewHalfHeight = viewWidth / 2.0f;
     float viewCenterY = 225.0f;
 
-    //// Camera setup
-    //glm::mat4 projection = glm::ortho(screenLeft - 50.0f, screenRight + 50.0f, viewCenterY - viewHalfHeight,  // bottom: -225
-    //    viewCenterY + viewHalfHeight, -500.0f, 100.0f);
-    //glm::mat4 view = glm::lookAt(
-    //    glm::vec3(0.0f, 0.0f, 10.0f),
-    //    glm::vec3(0.0f, 0.0f, 0.0f),
-    //    glm::vec3(0.0f, 1.0f, 0.0f)
-    //);
+
 
     bool spacePressed = false;
     bool forceApplied = false;
@@ -216,7 +209,7 @@ int main() {
         }
 
         // Handle input - MOVED OUTSIDE THE PHYSICS TIMESTEP LOOP
-        const float rotationSpeed = 0.05f;
+        const float rotationSpeed = 0.01f;
         if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
             isPerspective = false;
         }
@@ -267,7 +260,7 @@ int main() {
         // Draw cables with new camera
         shader.Use();
         shader.SetMat4("mvp", projection * view);
-        shader.SetVec3("objectColor", glm::vec3(1.0f, 1.0f, 1.0f));
+        shader.SetVec3("color", glm::vec3(1.0f, 1.0f, 1.0f));
 
         for (int i = 0; i < 5; i++) {
             glm::vec3 anchorPos(startX + (i * particleGap), anchorY, 0);
